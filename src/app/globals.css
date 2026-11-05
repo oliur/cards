@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+/* The homepage course promo's glow. */
+@keyframes course-glow {
+  to {
+    transform: translateX(calc(-100% / 3));
+  }
+}
