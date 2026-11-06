@@ -41,11 +41,19 @@ Copy the prompt from the site and paste it into any AI builder, chat, or rules f
 
 ### Option 3: Add it as an agent skill
 
-Save the prompt as a skill so coding agents pick it up when they're working on UI:
+Install it as a skill so coding agents pick it up when they're working on UI. With the [skills CLI](https://github.com/vercel-labs/skills), which works with Claude Code, Cursor, Codex and other agents:
+
+```bash
+npx skills add oliur/cards
+```
+
+This installs the default system from [`skills/cards/SKILL.md`](skills/cards/SKILL.md). If you've customised it in the studio, copy the skill command from the studio instead. Your settings are part of its URL. For the default settings it looks like this:
 
 ```bash
 mkdir -p .claude/skills/cards && curl -fsSL https://cards.uidesigncourse.com/skill/cards.md -o .claude/skills/cards/SKILL.md
 ```
+
+`skills/cards/SKILL.md` is generated from `src/design-system/` by `pnpm skill`, so don't edit it by hand. It's regenerated on `dev` and `build`, and `pnpm lint` fails if the committed copy is out of date.
 
 ## Running the studio locally
 

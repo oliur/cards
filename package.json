@@ -6,14 +6,16 @@
   "description": "A customizable design system studio: tune color, type and radius, then copy one prompt that applies it anywhere.",
   "scripts": {
     "theme": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/write-theme.mts",
-    "predev": "pnpm theme",
+    "skill": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/write-skill.mts",
+    "predev": "pnpm theme && pnpm skill",
     "dev": "next dev",
-    "prebuild": "pnpm theme",
+    "prebuild": "pnpm theme && pnpm skill",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint && node scripts/check-spacing.mjs && node scripts/check-tokens.mjs",
+    "lint": "eslint && node scripts/check-spacing.mjs && node scripts/check-tokens.mjs && pnpm check:skill",
     "check:spacing": "node scripts/check-spacing.mjs",
-    "check:tokens": "node scripts/check-tokens.mjs"
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:skill": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/write-skill.mts --check"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
