@@ -26,7 +26,7 @@ const badgeBase = cva(
       },
       variant: { solid: "", tint: "", soft: "", outline: "bg-transparent ring-1 ring-inset" },
     },
-    defaultVariants: { size: "medium", variant: "soft" },
+    defaultVariants: { size: "medium", variant: "tint" },
   },
 );
 
@@ -46,7 +46,7 @@ function resolveBadge(variant: CardsVariant | StockVariant | null | undefined, s
   const stock = variant && variant in stockVariants && variant !== "outline" ? stockVariants[variant as StockVariant] : undefined;
   if (variant === "outline") return { variant: "outline" as const, status: status ?? "neutral", extra: undefined };
   if (stock) return { variant: stock.variant, status: status ?? stock.status, extra: stock.extra };
-  return { variant: (variant as CardsVariant | null | undefined) ?? "soft", status: status ?? "neutral", extra: undefined };
+  return { variant: (variant as CardsVariant | null | undefined) ?? "tint", status: status ?? "neutral", extra: undefined };
 }
 
 type BadgeVariantOptions = {

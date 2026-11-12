@@ -57,9 +57,9 @@ export function Patterns() {
                   {s.label}
                   <ArrowUpRightIcon className="size-4 text-fg-subtle" />
                 </div>
-                <div className="flex flex-wrap items-end justify-between gap-2">
-                  <span className="text-ui-xl text-fg">{s.value}</span>
-                  <Badge status={s.up ? "success" : "danger"} variant="soft" size="small">{s.delta}</Badge>
+                <div className="flex flex-col items-start gap-2">
+                  <span className="text-ui-xl text-fg tabular-nums">{s.value}</span>
+                  <Badge status={s.up ? "success" : "danger"} size="small">{s.delta}</Badge>
                 </div>
               </Card>
             ))}
@@ -74,7 +74,7 @@ export function Patterns() {
             />
             <CardDivider />
             <div className="overflow-x-auto">
-              <table className="w-full text-left">
+              <table className="w-full text-left tabular-nums">
                 <thead>
                   <tr className="bg-table-head text-ui-xs text-fg-muted">
                     <th className="px-5 py-2 font-[inherit]">Member</th>

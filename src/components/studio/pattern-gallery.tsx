@@ -110,7 +110,7 @@ export function RevenueCard() {
         <div className="space-y-1">
           <div className="text-ui-sm text-fg-muted">Revenue</div>
           <div className="flex items-center gap-2">
-            <span className="text-ui-xl text-fg">{data.total}</span>
+            <span className="text-ui-xl text-fg tabular-nums">{data.total}</span>
             <Badge status={data.up ? "success" : "danger"} size="small">{data.delta}</Badge>
           </div>
         </div>
@@ -130,7 +130,7 @@ export function RevenueCard() {
       </div>
 
       <div className="mt-6 flex flex-1 gap-3">
-        <div aria-hidden className="relative h-48 w-8 shrink-0 text-body-xs text-fg-subtle">
+        <div aria-hidden className="relative h-48 w-8 shrink-0 text-body-xs text-fg-subtle tabular-nums">
           {ticks.map((t) => (
             <span key={t} className="absolute right-0 -translate-y-1/2" style={{ top: `${(1 - t) * 100}%` }}>
               {formatThousands(Math.round(data.max * t * 10) / 10)}
@@ -159,7 +159,7 @@ export function RevenueCard() {
                       style={{ bottom: `calc(${(b.value / data.max) * 100}% + 8px)` }}
                     >
                       <div className="text-body-xs text-fg-muted">{b.label}</div>
-                      <div className="text-ui-sm text-fg">{formatThousands(b.value)}</div>
+                      <div className="text-ui-sm text-fg tabular-nums">{formatThousands(b.value)}</div>
                     </div>
                   )}
                 </div>
@@ -224,7 +224,7 @@ export function AnalyticsCard() {
       </div>
 
       <div className="mt-4 flex flex-1 gap-3">
-        <div aria-hidden className="relative h-40 w-6 shrink-0 text-body-xs text-fg-subtle">
+        <div aria-hidden className="relative h-40 w-6 shrink-0 text-body-xs text-fg-subtle tabular-nums">
           {ticks.map((t) => (
             <span key={t} className="absolute right-0 -translate-y-1/2" style={{ top: `${(1 - t / visitors.max) * 100}%` }}>{t}k</span>
           ))}
@@ -562,7 +562,7 @@ export function MarketCard() {
             <div className="min-w-0 flex-1">
               <div className="truncate text-body-xs text-fg-muted">{m.label}</div>
               <div className="flex items-center gap-2">
-                <span className="text-ui-sm text-fg">{m.value}</span>
+                <span className="text-ui-sm text-fg tabular-nums">{m.value}</span>
                 <Badge status={m.up ? "success" : "danger"} size="small">{m.delta}</Badge>
               </div>
             </div>
@@ -615,7 +615,7 @@ export function FlightCard() {
           <PlaneIcon className="size-4 rotate-45" />
         </span>
       </div>
-      <div className="mt-2 flex justify-between text-body-xs text-fg-muted">
+      <div className="mt-2 flex justify-between text-body-xs text-fg-muted tabular-nums">
         <span>Departed 11:12</span>
         <span>Arrives 16:34</span>
       </div>
@@ -684,7 +684,7 @@ export function DeliveryCard() {
               </div>
               <div className={cn("min-w-0", i < deliverySteps.length - 1 && "pb-4")}>
                 <div className={cn("text-ui-sm", done || current ? "text-fg" : "text-fg-muted")}>{s.label}</div>
-                <div className="text-body-xs text-fg-muted">{s.detail}</div>
+                <div className="text-body-xs text-fg-muted tabular-nums">{s.detail}</div>
               </div>
             </li>
           );

@@ -45,6 +45,10 @@ export const principles = [
     body: "Set type with the named styles (text-heading-4, text-ui-sm, text-body-sm, text-overline-xs) which bundle size, line-height, tracking and weight. Do not combine them with font-size, leading, tracking or font-weight utilities. Never set words or sentences in full uppercase unless the user asks for it.",
   },
   {
+    title: "Numbers line up",
+    body: "Any number that gets compared, scanned or updates in place uses tabular-nums so its digits share one width and columns, totals and timers don't jitter: tables, stat and revenue cards, prices, deltas, chart axes and tooltips, timestamps, durations and counters. Put it on the table or the container rather than every cell. Running text (\"3 new messages\") keeps proportional figures. Monospace text is already tabular.",
+  },
+  {
     title: "One spacing unit",
     body: "Every padding, margin, gap, offset and size is a whole multiple of the spacing unit (4px by default; the density setting changes the unit and scales the type with it, so a whole UI gets denser or airier together): use whole Tailwind steps only (1 = one unit, 2 = two …) and never half steps (1.5, 2.5, 3.5) or arbitrary pixel values. Inside components 2–4 (8–16px); between related elements 4–6 (16–24px); card padding 5–6 (20–24px); between sections 8–12 (32–48px). Control heights: 40 / 36 / 32 / 28. Only 1–2px hairlines (borders, rings, underlines) sit off the grid.",
   },
@@ -196,9 +200,10 @@ line:      list flex gap-6 border-b border-line; trigger h-12 text-ui-sm text-fg
   {
     name: "Badge & status",
     code: `badge:   inline-flex h-5 items-center gap-1 rounded-full px-2 text-ui-xs tabular-nums, in every size and at every radius
-         soft (default): bg-{state}-subtle text-{state}-fg shadow-badge (its edge is drawn from its own text color)
+         tint (default): bg-{state}-line text-{state}-fg
+         soft: bg-{state}-subtle text-{state}-fg shadow-badge (its edge is drawn from its own text color)
          neutral soft: bg-control text-fg-muted shadow-button (never a grey fill)
-         tint: bg-{state}-line text-{state}-fg     solid: bg-{state} text-white
+         solid: bg-{state} text-white
          outline: bg-transparent ring-1 ring-inset ring-{state}-line text-{state}
 status pill (tables): h-6 rounded-full bg-control px-2 text-ui-xs text-fg-muted shadow-button + size-2 dot in bg-{state}`,
   },

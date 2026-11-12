@@ -120,7 +120,7 @@ function StatCard({ label, value, delta, up = true, className }: { label: string
         <ArrowUpRightIcon className="size-4 text-fg-subtle" />
       </div>
       <div className="flex items-end justify-between gap-2">
-        <span className="text-ui-xl text-fg">{value}</span>
+        <span className="text-ui-xl text-fg tabular-nums">{value}</span>
         <Badge status={up ? "success" : "danger"} size="small">{delta}</Badge>
       </div>
     </Card>

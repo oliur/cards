@@ -166,7 +166,7 @@ export function ComponentsShowcase() {
 
           <Specimen label="Badge & status">
             <div className="-m-2 space-y-4 overflow-x-auto p-2">
-              {(["soft", "tint", "solid", "outline"] as const).map((v) => (
+              {(["tint", "soft", "solid", "outline"] as const).map((v) => (
                 <div key={v} className="flex items-center gap-2 whitespace-nowrap">
                   <span className="w-14 text-ui-xs text-fg-subtle capitalize">{v}</span>
                   {(["neutral", "primary", "success", "warning", "danger", "highlight"] as const).map((s) => (
